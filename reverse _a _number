@@ -1,0 +1,9 @@
+def reverse_number(number,digit_of_number):
+    sum = 0
+    while number > 0:
+        remainder = number%10
+        number = number//10
+        sum += remainder*(10**(digit_of_number-1))
+        digit_of_number -= 1
+    print(sum)
+reverse_number(1234,4)
