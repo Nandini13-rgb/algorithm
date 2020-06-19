@@ -1,0 +1,23 @@
+def sorting_arr(arr):
+    left = 0
+    mid = 0
+    right = 0
+    for i in range(len(arr)):
+        if arr[i] == 0:
+            left += 1
+            arr[left] = 0
+        elif arr[i] == 1:
+            mid += 1
+        else:
+            right += 1
+    for i in range(len(arr)):
+        if i < left:
+            arr[i] = 0
+        elif left <= i < left+mid:
+            arr[i] = 1
+        else:
+            arr[i] = 2
+
+    print(arr)
+sorting_arr([1,2,0,0,2,1,0,2,0,1,2,1])
+
