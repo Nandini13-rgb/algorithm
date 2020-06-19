@@ -1,0 +1,9 @@
+def enque(que,element):
+    que.append(element)
+    return que
+def deque(que):
+    if if_empty:
+        return Falses
+    else:
+        que = que[:len(que)-1]
+        return que
