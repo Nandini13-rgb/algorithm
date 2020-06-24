@@ -25,16 +25,16 @@ def look_n_say_recursive(term):
         return "11"
     result = look_n_say(term-1)
     for index in range(2, term):
-    count = 1
-    output = ""
-    for i in range(1, len(result)):
-        if result[i] == result[i - 1]:
-            count += 1
-        else:
-            output += str(count) + result[i - 1]
-            count = 1
-        if i == len(result) - 1:
-            output += str(count) + result[i]
+        count = 1
+        output = ""
+        for i in range(1, len(result)):
+            if result[i] == result[i - 1]:
+                count += 1
+            else:
+                output += str(count) + result[i - 1]
+                count = 1
+            if i == len(result) - 1:
+                output += str(count) + result[i]
     result = output
     
 
