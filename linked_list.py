@@ -37,3 +37,39 @@ if __name__ == '__main__':
     while stack:
         data = stack.pop()
         print(data)
+    # print nth node
+    def nth_node():
+        index = 4
+        count = 0
+        temp = node1
+        while temp:
+            temp = temp.next
+            count += 1
+            if count == index:
+                print(Node(count).data)
+    #nth_node()
+    # print mid
+    def find_mid_iteration():
+        count = 0
+        temp = node1
+        while temp:
+            temp = temp.next
+            count += 1
+        if count%2 == 0:
+            print(count//2)
+        else:
+            print((count//2)+1)
+    find_mid_iteration()
+    def find_mid():
+        slow = node1
+        faster = node1
+        while faster.next:
+            faster = faster.next.next
+            if faster == None:
+                break
+            slow = slow.next
+        print(slow.data)
+    find_mid()
+    #node100 = Node(100)
+
+
