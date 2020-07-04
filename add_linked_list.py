@@ -47,7 +47,7 @@ def add_list():
             carry = (sum + carry) // 10
         temp1 = temp1.next
         temp2 = temp2.next
-    while temp1 is not None:
+    while temp1 is not None: # if some element left in list1
         if carry > 0:
             if temp1.data+carry < 10:
                 llist3.head.next = Node(temp1.data+carry)
@@ -62,7 +62,7 @@ def add_list():
             llist3.head.next = Node(temp1.data)
             print(llist3.head.next.data)
         temp1 = temp1.next
-    while temp2 is not None:
+    while temp2 is not None:# if some element left in list2
         if carry > 0:
             if temp1.data+carry < 10:
                 llist3.head.next = Node(temp1.data+carry)
@@ -76,7 +76,7 @@ def add_list():
             llist3.head.next = Node(temp1.data)
             print(llist3.head.next.data)
         temp2 = temp2.next
-    if carry > 0:
+    if carry > 0: # if no element left in either list but carry lefts
        llist3.head.next = Node(carry)
        print(llist3.head.next.data)
 add_list()
