@@ -42,35 +42,36 @@ def merge_list(pointer1,pointer2):
         return view(pointer2)
     if pointer2 == None:
         return view(pointer1)
-    if pointer1.data < pointer2.data:    
-        while pointer2:
-            if pointer1 == None:
-                break
-            if pointer1.data < pointer2.data:
-                print(pointer1.data)
-                prev = pointer1
-                pointer1 = pointer1.next
-            else:
-                temp1 = pointer2.next
-                prev.next = pointer2
-                print(prev.next.data)
-                prev.next.next = pointer1
-                #print(prev.next.next.data)
-                pointer2 = temp1
-    else:
-        while pointer1:
-            if pointer2 == None:
-                break
-            if pointer2.data < pointer1.data:
-                print(pointer2.data)
-                prev = pointer2
-                pointer2 = pointer2.next
-            else:
-                temp1 = pointer1.next
-                prev.next = pointer1
-                print(prev.next.data)
-                prev.next.next = pointer2
-                pointer1 = temp1         
-    while pointer1:
-        print(pointer1.data)
+    result = LinkedList()
+    temp = None
+    if pointer1.data < pointer2.data:
+        temp = pointer1
         pointer1 = pointer1.next
+    else:
+        temp = pointer2
+        pointer2 = pointer2.next
+    result.head = temp
+    while pointer2 and pointer1:
+        if pointer1 == None:
+            break
+        if pointer1.data < pointer2.data:
+            temp.next = pointer1
+            pointer1 = pointer1.next #9
+            temp = temp.next
+        else:
+            temp.next = pointer2#2,3,4,5
+            temp = temp.next
+            pointer2 = pointer2.next# 4,5
+    while pointer1:
+        temp.next = pointer1
+        temp = temp.next
+        pointer1 = pointer1.next
+    while pointer2:
+        temp.next = pointer2
+        temp = temp.next
+        pointer2 = pointer2.next
+    view(result.head)
+merge_list(pointer1,pointer2)
+
+
+
