@@ -28,6 +28,13 @@ insert(r, Node(7))
 insert(r, Node(1))
 insert(r, Node(8))
 
+
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.val)
+        inorder(root.right)
+
 def search(root,value):#6
     if root == None:
         print("Not present")
