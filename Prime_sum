@@ -1,0 +1,17 @@
+    def isSumOfTwo (self, N):
+        # code here 
+        if N % 2 != 0:
+            # check if N-2 is prime bcoz odd + even = odd only even prime number is 2 
+            if (N-2) == 2: #29 4577
+                return "Yes"
+         
+            if (N-2) == 0:
+                return "No"
+         
+            for i in range(3, (N-2)):
+                if(N-2)%i == 0: 
+                    return "No"
+                
+            return 'Yes'
+        else:
+            return "Yes"
