@@ -1,0 +1,21 @@
+def subArraySum(self,arr, n, s): 
+       #Write your code here
+        left = 0
+        right = 0
+        cur_sum = 0
+        res = [0,0]
+        while left<len(arr) or right < len(arr):
+            if right == n and cur_sum < s:
+                return -1
+            elif left == n and cur_sum > s:
+                return -1
+            elif cur_sum < s:
+                cur_sum += arr[right]
+                right += 1
+            elif cur_sum > s:
+                cur_sum -= arr[left]
+                left += 1
+            else:
+                res[0] = left+1
+                res[1] = right
+                return res
